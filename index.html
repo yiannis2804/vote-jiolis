@@ -6,7 +6,7 @@
     <title>Andreas Polydorou for President | GC School of Careers</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+    <style>  
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
         
         body {
@@ -78,6 +78,28 @@
         .hover-grow:hover {
             transform: scale(1.05);
         }
+
+        /* Carousel styles */
+        .carousel-1, .carousel-2, .carousel-3 {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide-1, .carousel-slide-2, .carousel-slide-3 {
+            min-width: 100%;
+        }
+        
+        .carousel-prev-1, .carousel-next-1,
+        .carousel-prev-2, .carousel-next-2,
+        .carousel-prev-3, .carousel-next-3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -86,14 +108,13 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-2">
-                    <img src="mysterybox.gif" alt="Mystery Box" class="w-8 h-8">
+                    <i class="fas fa-subway text-3xl"></i>
                     <h1 class="nav-link text-white font-semibold hover:text-yellow-200 transition">Jiolis 2025</h1>
                 </div>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-white font-semibold hover:text-yellow-200 transition">Home</a>
                     <a href="#why-vote-me" class="nav-link text-white font-semibold hover:text-yellow-200 transition">Why Vote Me</a>
                     <a href="#aims" class="nav-link text-white font-semibold hover:text-yellow-200 transition">Our Aims</a>
-                    <a href="#support" class="nav-link text-white font-semibold hover:text-yellow-200 transition">Student Support</a>
                     <a href="#suggestions" class="nav-link text-white font-semibold hover:text-yellow-200 transition">Your Suggestions</a>
                     <a href="#journey" class="nav-link text-white font-semibold hover:text-yellow-200 transition">Our Journey</a>
                 </nav>
@@ -107,15 +128,11 @@
         <div class="md:hidden hidden bg-orange-600 w-full py-4" id="mobile-menu">
             <div class="container mx-auto px-4 flex flex-col space-y-4">
                 <a href="#home" class="text-white font-semibold hover:text-yellow-200 transition">Home</a>
-                <a href="#why-vote-me" class="text-white font-semibold hover:text-yellow-200 transition">Why Vote Me</a>
                 <a href="#aims" class="text-white font-semibold hover:text-yellow-200 transition">Our Aims</a>
-                <a href="#support" class="text-white font-semibold hover:text-yellow-200 transition">Student Support</a>
                 <a href="#suggestions" class="text-white font-semibold hover:text-yellow-200 transition">Your Suggestions</a>
                 <a href="#journey" class="text-white font-semibold hover:text-yellow-200 transition">Our Journey</a>
             </div>
         </div>
-        
-        
     </header>
 
     
@@ -364,7 +381,7 @@
             <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500">
+                        <div class="w-40 h-40 rounded-lg overflow-hidden border-4 border-blue-500 flex items-center justify-center">
                             <img src="studentsupport.jpg" alt="Student Support" class="w-full h-full object-cover">
                         </div>
                     </div>
@@ -480,25 +497,47 @@
                 <p class="text-lg text-gray-700 max-w-3xl mx-auto">Meet the team behind Jiolis and see our campaign in action</p>
             </div>
             
-            <!-- Campaign Photos -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="rounded-xl overflow-hidden shadow-lg hover-grow">
-                    <img src="team1jiolis.jpg?v=2" alt="Campaign Photo" class="w-full h-64 object-cover">
+            <!-- Gallery 1 -->
+            <div class="mb-16">
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+                    <img src="picture1.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture2.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture3.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture4.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture5.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg hover-grow">
-                    <img src="team2jiolis.jpg?v=2" alt="Campaign Photo" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Gallery 2 -->
+            <div class="mb-16">
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+                    <img src="picture11.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture12.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture13.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture14.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture15.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg hover-grow">
-                    <img src="team3jiolis.jpg?v=2" alt="Campaign Photo" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Gallery 3 -->
+            <div class="mb-16">
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+                    <img src="picture21.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture22.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture23.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture24.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
+                    <img src="picture25.jpg" onclick="openModal(this)" class="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer hover:opacity-90 transition">
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg hover-grow">
-                    <img src="team4jiolis.jpg?v=2" alt="Campaign Photo" class="w-full h-64 object-cover">
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg hover-grow">
-                    <img src="team5jiolis.jpg?v=2" alt="Campaign Photo" class="w-full h-64 object-cover">
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg hover-grow">
-                    <img src="team6jiolis.jpg?v=2" alt="Campaign Photo" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Modal -->
+            <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+                <div class="relative max-w-4xl w-full">
+                    <span class="absolute top-4 right-4 text-white text-4xl cursor-pointer" onclick="closeModal()">&times;</span>
+                    <img id="modalImage" class="w-full max-h-screen object-contain">
                 </div>
             </div>
         </div>
@@ -591,6 +630,55 @@
                     }
                 }
             });
+        });
+
+        // Carousel functionality
+        function setupCarousel(num) {
+            const carousel = document.querySelector(`.carousel-${num}`);
+            const slides = document.querySelectorAll(`.carousel-slide-${num}`);
+            const prevBtn = document.querySelector(`.carousel-prev-${num}`);
+            const nextBtn = document.querySelector(`.carousel-next-${num}`);
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            });
+            
+            updateCarousel();
+        }
+        
+        // Image modal functionality
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
         });
     </script>
 </body>
